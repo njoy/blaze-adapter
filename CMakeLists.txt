@@ -1,7 +1,7 @@
 
 cmake_minimum_required( VERSION 3.2 )
 set( CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Supported configuration types" FORCE )
-        
+
 if( NOT is_subproject )
     if( NOT ROOT_DIRECTORY )
         set( ROOT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
@@ -40,7 +40,7 @@ execute_process(
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     OUTPUT_VARIABLE GIT_HASH
     OUTPUT_STRIP_TRAILING_WHITESPACE
-) 
+)
 
 message( STATUS "" )
 message( STATUS "-----------------------------------------------------------" )
@@ -50,3 +50,6 @@ message( STATUS "Git current branch: ${GIT_BRANCH}" )
 message( STATUS "Git commit hash: ${GIT_HASH}" )
 message( STATUS "" )
 message( STATUS "-----------------------------------------------------------" )
+
+add_library( blaze-adapter INTERFACE )
+target_include_directories( blaze-adapter INTERFACE src/include )
