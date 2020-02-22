@@ -52,4 +52,4 @@ message( STATUS "" )
 message( STATUS "-----------------------------------------------------------" )
 
 add_library( blaze-adapter INTERFACE )
-target_include_directories( blaze-adapter INTERFACE src/blaze )
+target_include_directories( blaze-adapter INTERFACE src )
