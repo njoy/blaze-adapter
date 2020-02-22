@@ -51,5 +51,6 @@ message( STATUS "Git commit hash: ${GIT_HASH}" )
 message( STATUS "" )
 message( STATUS "-----------------------------------------------------------" )
 
+add_subdirectory( src )
 add_library( blaze-adapter INTERFACE )
-target_include_directories( blaze-adapter INTERFACE src )
+target_link_libraries( blaze-adapter INTERFACE eigen )
